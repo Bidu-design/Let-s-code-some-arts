@@ -1,0 +1,88 @@
+function setup() {
+  createCanvas(400,400);
+}
+var x=0;
+
+function draw() 
+{
+ background(255);
+
+  push();
+  translate(x-100,0);
+  face();
+  pop();
+  x+=1;
+  if(x>width-200)
+  {
+    x=1;
+  }
+
+}
+
+function face()
+{
+  ellipse(200,200,200,200);
+  eyebrow();
+  eye();
+  nose();
+  lip();
+    
+}
+
+function eye()
+{
+
+  fill('black');
+ellipse(157,231,82,81);//left big glass
+fill('orange');
+ellipse(157,231,75,74);//left small glass
+  
+  fill('black');
+ellipse(265,230,82,80);//right big glass
+  fill('orange');
+ // strokeWeight(2); 
+  
+ellipse(265,230,75,74);//right small glass
+  fill('black');
+line(100,175,120,217); //glass wire left
+
+line(104,177,124,217);//glass wire left
+
+  fill('black');
+line(196,217,226,217);
+  
+line(194,214,228,214);
+
+//noFill();
+  //strokeWeight(4);
+  noStroke();
+   arc(map(mouseX,0,width,250,270),220,15,15,80,180); //eyeball .  right
+  
+  arc(map(mouseX,0,width,185,160),220,15,15,80,180);  //eyeball . left
+  
+  
+}
+  //eyebrows
+ function eyebrow(){ 
+  strokeWeight(4);
+  arc(155,200,200,65,180,250); //eyebrow left
+  arc(265,200,200,49,180,250); //eyebrow right
+  
+  
+
+  
+}
+function nose(){
+
+  arc(210,240,50,50,1,90);
+
+ 
+   
+}
+
+function lip()
+{
+  ellipse(200,290,20,10);
+}
+
+
